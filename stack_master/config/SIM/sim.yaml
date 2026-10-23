@@ -52,7 +52,7 @@ bridge:
     # ego starting pose on map
     sx: 0.5
     sy: 1.25
-    stheta: -0.7
+    stheta: 0.0
 
     # opp spawn distance along the raceline ahead of the ego [m]
     opp_spawn_s: 5.0
