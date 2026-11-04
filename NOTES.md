@@ -84,13 +84,13 @@ Wait for the Global Trajectory Optimization to finish.
 Run time trials in simulation using:
 
 ```
-ros2 launch stack_master time_trials_launch.xml racecar_version:=SIM LU_table:=SIM_linear ctrl_algo:=PP
+ros2 launch stack_master time_trials_launch.xml racecar_version:=SIM LU_table:=SIM_linear ctrl_algo:=PP sim_opp:=true
 ```
 
 Run head to head in the simulation using:
 
 ```
-ros2 launch stack_master head_to_head_launch.xml racecar_version:=SIM LU_table:=SIM_linear ctrl_algo:=MAP overtake_mode:=spliner
+ros2 launch stack_master head_to_head_launch.xml racecar_version:=SIM LU_table:=SIM_linear ctrl_algo:=MAP overtake_mode:=spliner sim_opp:=true
 ```
 
 # Log
