@@ -8,12 +8,9 @@
 
 # Goals
 
-1. Load the barrows hall map
-
-2. Create the cartographer map and optimize trajectories
-3. Try different variations of the algorithms
-4. Evaluate if re-implementing RRT is a possible exercise, or showing some
-   transformation questions.
+1. Load the barrows hall map.
+2. Create the optimize trajectories.
+3. Try time trial and head-to-head to racing.
 
 # Fixes
 
@@ -22,6 +19,17 @@
    `touch COLCON_IGNORE`
 
 # Commands
+
+Build the docker image
+
+```
+make default_setup
+```
+
+If the build is successful
+```
+make launch
+```
 
 Check if the docker container exists
 
@@ -40,14 +48,15 @@ forzaeth_devcontainer_x86_vdhiman   race_stack:humble_x86_vdhiman   "/ros_entryp
 If the container `forzaeth_devcontainer_x86_$USER` exists
 
 ```
-. setup.bash
-docker compose exec x86 /bin/bash
+. .env
+make launch
 ```
 
 If the container does not exists:
 
 ```
-docker compose start x86
+make default_setup
+make launch
 ```
 
 Inside docker container:
@@ -57,7 +66,8 @@ ros2 run rmw_zenoh_cpp rmw_zenohd &
 ros2 launch stack_master base_system_launch.xml map_name:=barrows_floor2 racecar_version:=SIM sim:=true
 ```
 
-mapping_launch.xml is not needed for the simulator
+mapping_launch.xml is not needed for the simulator, but needed for the real
+f1tenth.
 
 Generate trajectories
 
@@ -69,10 +79,18 @@ ros2 launch stack_master planner_launch.xml map_name:=barrows_floor2
 A GUI will popup showing you the map and the extracted centerline. If you are satisfied you can close it to start the global raceline generation. If you have no monitor it starts automatically. Then two GUIs will be shown, and within them a slider can be used to select the velocity scaling and overtaking sectors. 
 Be careful as once a sector is chosen it cannot be further subdivided. 
 
+Wait for the Global Trajectory Optimization to finish.
+
 Run time trials in simulation using:
 
 ```
 ros2 launch stack_master time_trials_launch.xml racecar_version:=SIM LU_table:=SIM_linear ctrl_algo:=PP
+```
+
+Run head to head in the simulation using:
+
+```
+ros2 launch stack_master head_to_head_launch.xml racecar_version:=SIM LU_table:=SIM_linear ctrl_algo:=MAP overtake_mode:=spliner
 ```
 
 # Log
