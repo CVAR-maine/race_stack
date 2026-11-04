@@ -22,7 +22,7 @@ Run the mapping launch file:
 ```shell
 ros2 launch stack_master mapping_launch.xml map_name:=<map name of choice>
 ```
-  - `<map name of choice>` can be any name with no white space. Conventionally we use the location name (eg, 'hangar', 'ETZ', 'icra') followed by the day of the month followed by an incremental version number. For instance, `hangar_12_v0`. You can also omit this argument. Then a map called `latest` is created. If there already is such a map it is copied to `backup`.
+  - `<map name of choice>` can be any name with no white space. Conventionally we use the location name (eg, 'hangar', 'ETZ', 'icra', 'barrows_floor2') followed by the day of the month followed by an incremental version number. For instance, `hangar_12_v0`. You can also omit this argument. Then a map called `latest` is created. If there already is such a map it is copied to `backup`.
   - `<NUCX>` depends on which car you are using. Parameters are available for NUC2, NUC5, NUC6, SIM (the latter represents a dummy car). If you have exported a `.env` file during the build process this is read from the env variables and does not have to be set.
 
 If you have a display connected (we recommend [this tool](https://github.com/ETH-PBL/remote-novnc)) an image will pop up showing you the current map. In the image you can press a button to save it. If you have no display you can do that via the terminal by pressing `y`, once you are satisfied by the map.
@@ -48,6 +48,11 @@ ros2 launch stack_master base_system_launch.xml map_name:=<name of mapped track>
   - `<true/false>` is a boolean value that indicates if you want to run the simulation or the real car. 
   - `<NUCX>` depends on which car you are using. Parameters are available for NUC2, NUC5, NUC6, SIM (the latter represents a dummy car). You can also omit this if the `.env` file was created.
 
+For example:
+```shell
+ros2 launch stack_master base_system_launch.xml map_name:=barrows_floor2 sim:=true racecar_version:=SIM
+```
+
 ### Time trials 
 ```shell
 ros2 launch stack_master time_trials_launch.xml racecar_version:=<NUCx used> LU_table:=<Look-Up Table name> ctrl_algo:=<control algorithm> 
@@ -56,7 +61,13 @@ ros2 launch stack_master time_trials_launch.xml racecar_version:=<NUCx used> LU_
   - `<Look-Up Table name>` is the name of the Look-Up Table you want to use. It must belong to the list of Look-Up Tables available in the `systm_identification/steering_lookup/cfg` folder.
   - `<control algorithm>` is the control algorithm you want to use. Current possibilities are MAP / PP.
 
+For example,
+```shell
+ros2 launch stack_master time_trials_launch.xml racecar_version:=SIM LU_table:=SIM_linear ctrl_algo:=PP 
+```
+
 ### Head to Head
+
 ```shell
 ros2 launch stack_master head_to_head_launch.xml racecar_version:=<NUCx used> LU_table:=<Look-Up Table name> ctrl_algo:=<control algorithm> overtake_mode:=spliner
 ```
@@ -66,6 +77,7 @@ ros2 launch stack_master head_to_head_launch.xml racecar_version:=<NUCx used> LU
 - `<overtake_mode>` is the mode you want to use for overtaking. `spliner` is the only current possibility.
 
 ### Simulation with Opponent
+
 It is possible to add a steerable opponent to the simulation by changing the following parameter in [stack_master/config/SIM/sim.yaml](./config/SIM/sim.yaml):
 ```yaml
     # opponent parameters
