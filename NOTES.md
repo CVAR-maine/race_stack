@@ -1,5 +1,13 @@
 # Goals
 
+# Install docker
+
+- https://docs.docker.com/engine/install/ubuntu/
+- https://docs.docker.com/engine/install/linux-postinstall/
+
+
+# Goals
+
 1. Load the barrows hall map
 
 2. Create the cartographer map and optimize trajectories
