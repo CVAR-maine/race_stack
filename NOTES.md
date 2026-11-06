@@ -1,5 +1,18 @@
 # Goals
 
+1. build and run correct docker image on the jetson nano
+2. upload the docker image
+3. and race the car after mapping a loop in a fixed track
+4. Cross compile, maybe?
+
+# Jetson setup
+## Notes
+1. Failure happens because librealsense depends on libopencv-4.5.1, but
+   dustynv installs opencv-4.8.1-dirty . 
+2. dustynv provides librealsense installation notes. 
+
+# Simulation notes
+
 # Install docker
 
 - https://docs.docker.com/engine/install/ubuntu/

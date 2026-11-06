@@ -21,7 +21,7 @@ help: ## Show available targets and their descriptions
 	@grep -E '^[a-zA-Z_-]+:.*?## ' Makefile | awk 'BEGIN {FS = ":.*?## "}; {printf "  %-20s %s\n", $$1, $$2}'
 
 # HIGH-LEVEL TARGETS
-default_setup: export_env edit-json-arm check-registry setup_cache build ## Setup the race_stack on a new computer, with the simulator
+default_setup: export_env edit-json-arm setup_cache build ## Setup the race_stack on a new computer, with the simulator
 # LEAF TARGETS
 export_env:
 	@echo "Exporting environment variables to .env file..."
