@@ -26,10 +26,6 @@ ARG USER
 ARG UID
 ARG GID
 
-ADD ./.install_utils/realsense_setup.sh /.install_utils/realsense_setup.sh
-RUN if [[ "$USE_VIO" == "true" ]]; then chmod +x /.install_utils/realsense_setup.sh && /.install_utils/realsense_setup.sh; fi
-
-
 ADD ./.install_utils/linux_req/linux_req.txt /.install_utils/linux_req.txt
 RUN if [[ "$PLATFORM" == "jet" ]]; then \
       mkdir -p /tmp/ocvdummy/DEBIAN && \
@@ -49,6 +45,11 @@ RUN if [[ "$PLATFORM" == "jet" ]]; then \
 RUN apt-get update && xargs apt-get install -y < /.install_utils/linux_req.txt
 ADD ./.install_utils/python_req.txt /tmp/.install_utils/python_req.txt
 RUN pip3 install --index-url https://pypi.org/simple -r /tmp/.install_utils/python_req.txt || true
+
+ADD ./.install_utils/realsense_setup.sh /.install_utils/realsense_setup.sh
+RUN if [[ "$USE_VIO" == "true" ]]; then chmod +x /.install_utils/realsense_setup.sh && /.install_utils/realsense_setup.sh; fi
+
+
 
 RUN apt-get update && apt-get install -y --no-install-recommends build-essential python3-dev && \
     pip3 install --index-url https://pypi.org/simple "setuptools==58.2.0" wheel "cython<3" && \
