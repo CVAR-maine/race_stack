@@ -3,9 +3,9 @@
 # Setup permissions
 # USER="$(id -u -n)"
 sudo chown -R $USER:$USER ~/ws/
-if [ -d $CCACHE_DIR ]; then
+if [[ "$CCACHE_DIR" && -d "$CCACHE_DIR" ]]; then
+    sudo chown -R $USER:$USER "$CCACHE_DIR"
     sudo chmod o+x /root/
-    sudo chown -R $USER:$USER $CCACHE_DIR
     sudo chown -R $USER:$USER /opt/venv
 fi
 
