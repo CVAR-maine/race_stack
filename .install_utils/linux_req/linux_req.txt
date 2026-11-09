@@ -8,6 +8,7 @@ apt-utils
 net-tools
 joystick
 ros-humble-ament-lint-auto
+ros-humble-ament-cmake-auto
 ros-humble-asio-cmake-module
 ros-humble-diagnostic-updater
 ros-humble-robot-localization
