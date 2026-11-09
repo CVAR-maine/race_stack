@@ -1,6 +1,7 @@
 wget
 jq
 x11-apps
+ccache
 python3-pip
 python3-colcon-clean
 apt-utils
