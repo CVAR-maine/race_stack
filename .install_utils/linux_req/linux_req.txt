@@ -12,7 +12,6 @@ ros-humble-ament-cmake-auto
 ros-humble-asio-cmake-module
 ros-humble-diagnostic-updater
 ros-humble-robot-localization
-ros-humble-tf-transformations
 ros-humble-cartographer-ros
 ros-humble-urg-node
 ros-humble-ackermann-msgs
@@ -31,6 +30,7 @@ ros-humble-imu-pipeline
 ros-humble-rqt*
 ros-humble-rqt-common-plugins
 ros-humble-joy-linux
+ros-humble-joy-teleop
 ros-humble-image-transport-plugins
 ros-humble-ros2launch
 ros-humble-ros2run

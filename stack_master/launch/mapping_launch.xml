@@ -9,7 +9,9 @@
     <let name="map_src_path" value="$(find-pkg-prefix stack_master)/../../src/race_stack/stack_master/maps/$(var map_name)" />
 
     <!-- ON PHYSICAL SYSTEM -->
-    <node pkg="global_planner" exec="mapping_node" name="mapping_node" output="screen" emulate_tty="true">
+    <node pkg="global_planner" exec="mapping_node" name="mapping_node" output="screen" 
+      >
+    <!--emulate_tty="true" -->
         <param from="$(find-pkg-share stack_master)/config/global_planner/mapping.yaml" />
         <param name="map_name" value="$(var map_name)" />
         <param from="$(find-pkg-share stack_master)/config/global_planner/mapping.yaml" />
