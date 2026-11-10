@@ -47,7 +47,10 @@ ADD ./.install_utils/python_req.txt /tmp/.install_utils/python_req.txt
 RUN pip3 install --index-url https://pypi.org/simple -r /tmp/.install_utils/python_req.txt || true
 
 RUN apt-get remove python3-transforms3d
-RUN /ros2_install.sh tf_transformations
+RUN if [[ -f /ros2_install.sh ]]; then /ros2_install.sh tf_transformations; \
+    else apt-get update \
+        && apt-get install -y ros-$ROS_DISTRO-tf-transformations; \
+    fi
 
 ADD ./.install_utils/realsense_setup.sh /.install_utils/realsense_setup.sh
 RUN if [[ "$USE_VIO" == "true" ]]; then chmod +x /.install_utils/realsense_setup.sh && /.install_utils/realsense_setup.sh; fi
