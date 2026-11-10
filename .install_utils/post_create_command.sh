@@ -20,6 +20,7 @@ bash ~/ws/src/race_stack/.install_utils/gb_opt_setup.sh || echo "Failed to setup
 # Apply Joystick patch
 sudo chmod 666 /dev/input/js0
 sudo chmod 666 /dev/input/event*
+sudo chmod 666 /dev/video*
 
 # setup f1tenth_gym
 cd ~/ws &&

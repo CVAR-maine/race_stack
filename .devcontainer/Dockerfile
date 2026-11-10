@@ -46,6 +46,7 @@ RUN apt-get update && xargs apt-get install -y < /.install_utils/linux_req.txt
 ADD ./.install_utils/python_req.txt /tmp/.install_utils/python_req.txt
 RUN pip3 install --index-url https://pypi.org/simple -r /tmp/.install_utils/python_req.txt || true
 
+RUN apt-get remove python3-transforms3d
 RUN /ros2_install.sh tf_transformations
 
 ADD ./.install_utils/realsense_setup.sh /.install_utils/realsense_setup.sh
