@@ -32,3 +32,6 @@ ros-humble-rqt*
 ros-humble-rqt-common-plugins
 ros-humble-joy-linux
 ros-humble-image-transport-plugins
+ros-humble-ros2launch
+ros-humble-ros2run
+ros-dev-tools
