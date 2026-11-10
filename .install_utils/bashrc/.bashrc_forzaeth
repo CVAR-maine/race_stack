@@ -1,8 +1,8 @@
 # forzaeth f1tenth extension
 source /opt/ros/$ROS_DISTRO/setup.bash
-[ -f /opt/ros/$ROS_DISTRO/install/setup.bash ] && /opt/ros/$ROS_DISTRO/install/setup.bash
+[ -f /opt/ros/$ROS_DISTRO/install/setup.bash ] && source /opt/ros/$ROS_DISTRO/install/setup.bash
 source /home/$USERNAME/ws/install/setup.bash
 [ -f /opt/basalt_ws/install/setup.bash ] && source /opt/basalt_ws/install/setup.bash
-alias sauce='source /opt/ros/${ROS_DISTRO}/setup.bash && { [ -f /opt/ros/$ROS_DISTRO/install/setup.bash ] && /opt/ros/$ROS_DISTRO/install/setup.bash; true; } && source /home/${USERNAME}/ws/install/setup.bash && { [ -f /opt/basalt_ws/install/setup.bash ] && source /opt/basalt_ws/install/setup.bash; true; }'
+alias sauce='source /opt/ros/${ROS_DISTRO}/setup.bash && { [ -f /opt/ros/$ROS_DISTRO/install/setup.bash ] && source /opt/ros/$ROS_DISTRO/install/setup.bash; true; } && source /home/${USERNAME}/ws/install/setup.bash && { [ -f /opt/basalt_ws/install/setup.bash ] && source /opt/basalt_ws/install/setup.bash; true; }'
 alias scripz='cd /home/${USERNAME}/ws/src/race_stack/stack_master/scripts'
 alias zenoh='cd /home/${USERNAME}/ws/src/race_stack/stack_master/scripts && ./run_zenoh.sh'
