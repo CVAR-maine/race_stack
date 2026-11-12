@@ -4,7 +4,7 @@
 ## Clone Repo
 Be aware to clone the ROS 2 branch!
 ```bash
-git clone -b ros2-humble --recurse-submodules git@github.com:CVAR-maine/race_stack.git 
+git clone -b ros2-humble --recurse-submodules https://github.com/CVAR-maine/race_stack 
 cd race_stack
 ```
 
