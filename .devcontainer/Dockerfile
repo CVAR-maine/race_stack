@@ -46,7 +46,8 @@ RUN apt-get update && bash /.install_utils/linux_req.txt
 ADD ./.install_utils/python_req.txt /tmp/.install_utils/python_req.txt
 RUN pip3 install --index-url https://pypi.org/simple -r /tmp/.install_utils/python_req.txt || true
 
-RUN apt-get remove python3-transforms3d && pip3 install transforms3d
+RUN apt-get remove python3-transforms3d 
+RUN pip3 install --index-url transforms3d
 RUN if [[ -f /ros2_install.sh ]]; then \
         /ros2_install.sh tf_transformations; \
     else apt-get update \
