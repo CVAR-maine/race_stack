@@ -1,37 +1,38 @@
-wget
-jq
-x11-apps
-ccache
-python3-pip
-python3-colcon-clean
-apt-utils
-net-tools
-joystick
-ros-humble-ament-lint-auto
-ros-humble-ament-cmake-auto
-ros-humble-asio-cmake-module
-ros-humble-diagnostic-updater
-ros-humble-robot-localization
-ros-humble-cartographer-ros
-ros-humble-urg-node
-ros-humble-ackermann-msgs
-ros-humble-control-msgs
-ros-humble-rosbridge-server
-ros-humble-serial-driver
-ros-humble-test-msgs
-ros-humble-rqt
-ros-humble-xacro
-ros-humble-nav2-map-server
-ros-humble-nav2-lifecycle-manager
-ros-humble-rmw-zenoh-cpp
-ros-humble-rviz2
-python3-tk
-ros-humble-imu-pipeline
-ros-humble-rqt*
-ros-humble-rqt-common-plugins
-ros-humble-joy-linux
-ros-humble-joy-teleop
-ros-humble-image-transport-plugins
-ros-humble-ros2launch
-ros-humble-ros2run
+apt-get install -y \
+wget \
+jq \
+x11-apps \
+ccache \
+python3-pip \
+python3-colcon-clean \
+apt-utils \
+net-tools \
+joystick \
+ros-$ROS_DISTRO-ament-lint-auto \
+ros-$ROS_DISTRO-ament-cmake-auto \
+ros-$ROS_DISTRO-asio-cmake-module \
+ros-$ROS_DISTRO-diagnostic-updater \
+ros-$ROS_DISTRO-robot-localization \
+ros-$ROS_DISTRO-cartographer-ros \
+ros-$ROS_DISTRO-urg-node \
+ros-$ROS_DISTRO-ackermann-msgs \
+ros-$ROS_DISTRO-control-msgs \
+ros-$ROS_DISTRO-rosbridge-server \
+ros-$ROS_DISTRO-serial-driver \
+ros-$ROS_DISTRO-test-msgs \
+ros-$ROS_DISTRO-rqt \
+ros-$ROS_DISTRO-xacro \
+ros-$ROS_DISTRO-nav2-map-server \
+ros-$ROS_DISTRO-nav2-lifecycle-manager \
+ros-$ROS_DISTRO-rmw-zenoh-cpp \
+ros-$ROS_DISTRO-rviz2 \
+python3-tk \
+ros-$ROS_DISTRO-imu-pipeline \
+ros-$ROS_DISTRO-rqt* \
+ros-$ROS_DISTRO-rqt-common-plugins \
+ros-$ROS_DISTRO-joy-linux \
+ros-$ROS_DISTRO-joy-teleop \
+ros-$ROS_DISTRO-image-transport-plugins \
+ros-$ROS_DISTRO-ros2launch \
+ros-$ROS_DISTRO-ros2run \
 ros-dev-tools

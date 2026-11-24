@@ -14,9 +14,9 @@ x-common-settings: &common-settings
     - $HOME/.Xauthority:/tmp/.Xauthority
     - /tmp/.X11-unix:/tmp/.X11-unix
     - ./:/home/${USER}/ws/src/race_stack:rw
-    - ../race_stack_cache/humble/build:/home/${USER}/ws/build:rw
-    - ../race_stack_cache/humble/install:/home/${USER}/ws/install:rw
-    - ../race_stack_cache/humble/logs:/home/${USER}/ws/logs:rw
+    - ../race_stack_cache/$ROS_DISTRO/build:/home/${USER}/ws/build:rw
+    - ../race_stack_cache/$ROS_DISTRO/install:/home/${USER}/ws/install:rw
+    - ../race_stack_cache/$ROS_DISTRO/logs:/home/${USER}/ws/logs:rw
     - .vscode:/home/${USER}/ws/.vscode:rw
   environment:
     - DISPLAY=${DISPLAY}
@@ -34,7 +34,7 @@ x-common-settings: &common-settings
 services:
   jet:
     container_name: forzaeth_devcontainer_jet_$USER
-    image: race_stack:humble_jet_$USER
+    image: race_stack:${ROS_DISTRO}_jet_$USER
     <<: *common-settings
     runtime: nvidia
     deploy:
@@ -47,9 +47,9 @@ services:
 
   x86:
     container_name: forzaeth_devcontainer_x86_$USER
-    image: race_stack:humble_x86_$USER
+    image: race_stack:${ROS_DISTRO}_x86_$USER
     <<: *common-settings
   arm:
     container_name: forzaeth_devcontainer_arm_$USER
-    image: race_stack:humble_arm_$USER
+    image: race_stack:${ROS_DISTRO}_arm_$USER
     <<: *common-settings

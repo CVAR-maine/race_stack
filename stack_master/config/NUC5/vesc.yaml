@@ -21,8 +21,8 @@
     speed_max: 69000.0
     position_min: 0.0
     position_max: 0.0
-    servo_min: 0.15
-    servo_max: 0.85
+    servo_min: 0.0
+    servo_max: 1.0
 
 ackermann_to_vesc_node:
   ros__parameters:
@@ -36,8 +36,8 @@ actuation_manager:
     speed_max: 14.375
     max_acceleration: 2.5
     max_deceleration: 2.5
-    steering_min: -0.3271441202
-    steering_max: 0.2917771883
+    steering_min: -1.0
+    steering_max: 1.0
     max_steering_rate: 2.4615384615
     output_rate: 75.0
     command_timeout: 0.2

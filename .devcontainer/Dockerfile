@@ -1,4 +1,4 @@
-ARG IMAGE=ros:humble
+ARG IMAGE=ros:$ROS_DISTRO
 FROM ${IMAGE}
 ARG USE_VIO=false
 
@@ -42,7 +42,7 @@ RUN if [[ "$PLATFORM" == "jet" ]]; then \
       rm -rf /tmp/ocvdummy /tmp/libopencv-dev_4.8.1_all.deb; \
     fi
 
-RUN apt-get update && xargs apt-get install -y < /.install_utils/linux_req.txt
+RUN apt-get update && bash /.install_utils/linux_req.txt
 ADD ./.install_utils/python_req.txt /tmp/.install_utils/python_req.txt
 RUN pip3 install --index-url https://pypi.org/simple -r /tmp/.install_utils/python_req.txt || true
 

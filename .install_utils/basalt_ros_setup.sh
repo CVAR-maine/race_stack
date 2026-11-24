@@ -27,7 +27,7 @@ if pkg-config --exists opencv4 2>/dev/null; then
   OPENCV_PKGS=""
   BUILD_CV_BRIDGE_FROM_SOURCE=1
 else
-  OPENCV_PKGS="libopencv-dev ros-humble-cv-bridge ros-humble-image-transport"
+  OPENCV_PKGS="libopencv-dev ros-$ROS_DISTRO-cv-bridge ros-$ROS_DISTRO-image-transport"
   BUILD_CV_BRIDGE_FROM_SOURCE=0
 fi
 
@@ -35,7 +35,7 @@ apt install -y \
     python3-vcstool \
     libtbb-dev \
     libfmt-dev \
-    ros-humble-ament-cmake-clang-format \
+    ros-$ROS_DISTRO-ament-cmake-clang-format \
     $OPENCV_PKGS
 
 mkdir -p "$BASALT_WS/src"

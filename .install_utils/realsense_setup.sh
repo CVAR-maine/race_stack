@@ -25,5 +25,5 @@ if [ "$ARCH" = "amd64" ]; then
     apt-get -y install librealsense2-dkms
 fi
 
-# ROS 2 wrapper (ros-humble-realsense2-camera & co.)
-apt-get -y install "ros-humble-realsense2-*"
+# ROS 2 wrapper (ros-$ROS_DISTRO-realsense2-camera & co.)
+apt-get -y install "ros-$ROS_DISTRO-realsense2-*"

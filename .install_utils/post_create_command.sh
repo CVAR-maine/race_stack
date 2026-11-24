@@ -26,6 +26,7 @@ sudo chmod 666 /dev/video*
 cd ~/ws &&
     colcon build --packages-up-to f110_gym --base-paths ~/ws \
         --cmake-args "-DCMAKE_BUILD_TYPE=Release" "-DCMAKE_EXPORT_COMPILE_COMMANDS=On" \
+        -DCMAKE_POLICY_DEFAULT_CMP0148=OLD -DPython3_EXECUTABLE=/usr/bin/python3 \
         -Wall -Wextra -Wpedantic --cmake-clean-cache
 
 cd ~/ws/src/race_stack &&

@@ -16,7 +16,7 @@ services:
       dockerfile: ./.devcontainer/Dockerfile
       args:
         <<: *user-args
-        IMAGE: dustynv/ros:humble-ros-base-l4t-r36.3.0
+        IMAGE: dustynv/ros:$ROS_DISTRO-ros-base-l4t-r36.3.0
         PLATFORM: jet
 
   x86:
